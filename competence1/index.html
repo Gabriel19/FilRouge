@@ -11,17 +11,49 @@
     <body>
         <header>
             <img src="../competence1/img/logo_small.png" alt="logo">
-            <div class="dropdown">
-                <button class="dropbtn" id="button"><a href="#wrap" id="open"><img class="hamburger" src="../competence1/img/Hamburger_icon.svg.png " alt="menu hamburger"></a></button>
-                <div class="dropdown-content">
-                  <a href="#">Acheter</a>
-                  <a href="#">Vendre</a>
-                  <a href="#">Louer</a>
-                  <a href="#">Rencontrer un Conseiller</a>
-                  <a href="#">Estimer mon bien</a>
-                  <a href="#">Devenir Conseiller</a>
+            
+            <nav role='navigation'>
+                <div id="menuToggle">
+                    <input type="checkbox" />
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <ul id="menu">
+                        <a href="#">
+                            <li>Acheter</li>
+                        </a>
+                        <a href="#">
+                            <li>Vendre</li>
+                        </a>
+                        <a href="#">
+                            <li>Louer</li>
+                        </a>
+                        <a href="#">
+                            <li>Rencontrer un Conseiller</li>
+                        </a>
+                        <a href="#">
+                            <li>Estimer mon Bien</li>
+                        </a>
+                        <a href="#">
+                            <li>Devenir Conseiller</li>
+                        </a>
+                    </ul>
                 </div>
-              </div>
+                <script>
+                var menu = document.getElementById("mobile-menu");
+                var menuList = document.getElementById("mobile-menu_list")
+                    
+                var toggleMenu = function(){
+                        if(menuList.classList.contains("header_menulogo_mobile_show")){
+                            menuList.classList.remove("header_menulogo_mobile_show");
+                        }
+                        else{
+                            menuList.classList.add("header_menulogo_mobile_show");
+                        }
+                    }
+                    
+                    menu.addEventListener('click', toggleMenu);</script>
+            </nav>
         </header>
         <main>
             <div class="div1">
