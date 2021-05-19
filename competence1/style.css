@@ -1,178 +1,270 @@
-header {
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto;
-    grid-auto-flow: row;
-    
-}
-/* quand il n'y a pas de #wrap dans l'url (jenseign.com.com/page.html) */
-#wrap:not(:target) {
-  transform: translate3d(-335px, 0, 0); /* cache l'élément #wrap */
-}
- 
-/* quand il y a un #wrap dans l'url (jenseign.com.com/page.html#wrap) */
-#wrap:target {
-  transform: translate3d(0, 0, 0); /* affiche l'élément */
-}
-img{
-    grid-column-start: 1;
-    grid-row-start: 3;
-    grid-column-end: 3;
-    grid-row-end: 2;
+header {display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
+
+body {
+	margin: 0;
+	padding: 0;
+	background: #ffffff;
+	color: #444444;
+	font-family: montserrat;
+	overflow-x: hidden;
+}
+
+a {
+	text-decoration: none ;
+	color: #232323;
+	transition: color 0.3s ease;
+}
+
+a:hover {
+	color: #228D70;
+}
+
+#menuToggle {
+  display: block;
+  position: relative;
+  z-index: 1;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle input {
+  display: block;
+  width: 40px;
+  height: 32px;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+  -webkit-touch-callout: none;
+}
+
+#menuToggle span {
+	display: block;
+	width: 33px;
+	height: 4px;
+	margin-bottom: 5px;
+	position: relative;
+	background: #cdcdcd;
+	border-radius: 3px;
+	z-index: 1;
+	transform-origin: 4px 0px;
+	transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+	background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0),
+	opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+	transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+	transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked~span {
+	opacity: 1;
+	transform: rotate(45deg) translate(-2px, -1px);
+	background: #232323;
+}
+
+#menuToggle input:checked~span:nth-last-child(3) {
+	opacity: 0;
+	transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked~span:nth-last-child(2) {
+	opacity: 1;
+	transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu {
+  display: none;
+	position: absolute;
+	width: 300px;
+	margin: -100px 0 0 0;
+	padding: 50px;
+	padding-top: 125px;
+	right: -100px;
+	background: #ededed;
+	list-style-type: none;
+	-webkit-font-smoothing: antialiased;
+	transform-origin: 0% 0%;
+	transform: translate(100%, 0);
+
+	transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+}
+
+#menu li {
+	padding: 10px 0;
+	font: size 1.375em;;
+}
+
+#menuToggle input:checked~ul {
+	transform: scale(1.0, 1.0);
+	opacity: 1;
+}
 main{
-    background-image: url(../competence1/img/andrea-davis-IWfe63thJxk-unsplash.jpg);;
-    font-family: montserrat;
-    background-size: cover;
-    display: grid;
-    
+  background-image: url(../competence1/img/andrea-davis-IWfe63thJxk-unsplash.jpg);;
+  font-family: montserrat;
+  background-size: cover;
+  display: grid;
+  
 
-    height: 1600px;
+  height: 100em;
 }
 
 .div1{
-    background-color: #ffffff;
-    width: 100%;
-    
-    display: grid;
-    grid-column-start: 1;
-    grid-row-start: 4;
-    grid-column-end: 6;
-    grid-row-end: 6;
-    justify-content: center;
-    border-radius: 4px;
+  background-color: #ffffff;
+  width: 100%;
+  text-decoration: none;
+  display: grid;
+  grid-column-start: 1;
+  grid-row-start: 4;
+  grid-column-end: 6;
+  grid-row-end: 6;
+  justify-content: center;
+  border-radius: 4px;
+  
+}
+
+a:link {
+  color: black;
+  text-decoration: none;
+}
+
+
+a:visited {
+  color: black;
+}
+
+
+a:hover {
+  color: #FFC700;
+}
+
+
+a:active {
+  color: #228D70;
 }
 
 
 .button1{
-    background-color: #C4C4C4;
-
-    margin-top:50px;
-    width: 980px;
-    font-family: montserrat;
-    font-weight: bolder;
-    align-items: center;
-    font-size: 50px;
+  background-color: #C4C4C4;
+  margin-top:50px;
+  width: 100%;
+  font-family: montserrat;
+  font-weight: bolder;
+  align-items: center;
+  font-size: 50px;
 }
 
 body{
-    margin: 0;
-    width: 100%;
-    height: max-content;
+  margin: 0;
+  width: 100%;
+  height: max-content;
 }
 
 .button2{
-    background-color: #228D70;
-    padding: 15px 20px;
-    margin-bottom: 100px;
-    margin-top: 50px;
-    margin-left: 340px;
-    border-radius: 5px;
-    width: 300px;
-    font-family: montserrat;
-    font-weight: bolder;
-    font-size: 40px;
-    
+  background-color: #228D70;
+  padding: 15px 20px;
+  margin-bottom: 100px;
+  margin-top: 50px;
+  margin-left: 150px;
+  border-radius: 5px;
+  width: 50%;
+  font-family: montserrat;
+  font-weight: bolder;
+  font-size: 40px;
+  
 }
 
 .div2{
-  grid-column-start: 2;
-  grid-row-start: 6;
-  grid-column-end: 5;
-  grid-row-end: 7;
-  font-family: montserrat;
-  
+grid-column-start: 2;
+grid-row-start: 6;
+grid-column-end: 5;
+grid-row-end: 7;
+font-family: montserrat;
+
 }
 .div2 p{
-  font-size: 30px;
+font-size: 30px;
 }
 
 .button3{
-    background-color: #FFC700;
-    width: 500px;
-    height: 100px;
-    margin-left: 240px;
-    font-family: montserrat;
-    font-weight: bolder;
-    font-size: 50px ;
-    border-radius: 4px;
-    justify-content: center;
+  background-color: #FFC700;
+  width: 500px;
+  height: 100px;
+  margin: auto;
+  font-family: montserrat;
+  font-weight: bolder;
+  font-size: 50px ;
+  border-radius: 4px;
+  justify-content: center;
 }
 
 footer{
-    font-family: montserrat;
-    background-color: #C4C4C4;
-    height: 100%;
-  }
+  font-family: montserrat;
+  background-color: #C4C4C4;
+  height: 100%;
+}
 
 
 #retour:link {
-  text-decoration: none;
-  color: black;
-  font-family: montserrat;
-  font-weight: bold;
+text-decoration: none;
+color: black;
+font-family: montserrat;
+font-weight: bold;
 }
 
 #retour:visited{
-  color: #228D70;
-  font-family: montserrat;
-  font-weight: bold;
+color: #228D70;
+font-family: montserrat;
+font-weight: bold;
 }
 
 #retour:hover{
-  color: #FFC700;
-  font-family: montserrat;
-  font-weight: bold;
+color: #FFC700;
+font-family: montserrat;
+font-weight: bold;
 }
 
-
-
-/* Menu */
-
-.dropbtn {
-    background-color:#ffffff;
-    color: #FFC700;
-    padding: 16px;
-    font-size: 50px;
-    border: none;
-    cursor: pointer;
-    
+@media screen and (max-width:400px) {
+  header img {
+    width: 200px;
   }
-  
-
-  .dropdown {
-    position: relative;
-    font-family: montserrat;
-    grid-column-start: 3;
-    grid-row-start: 2;
-    grid-column-end: 4;
-    grid-row-end: 4;
-    font-size: 25px;
+  body {
+    width: auto;
   }
-  
-
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #ffffff;
-    min-width: 160px;
-    z-index: 1;
+  .div1{
+    width: 23.5em;
   }
-  
-
-  .dropdown-content a {
-    color: #228D70;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
+  .button1{
+    font-size: 2em;
   }
-  
-
-  .dropdown-content a:hover {background-color: #FFC700}
-  
-
-  .dropdown:hover .dropdown-content {
-    display: block;
+  .button2{
+    font-size: 1.5em;
   }
-  
+  .button3{
+    width: 15em;
+    font-size: 1.5em;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+}
