@@ -41,16 +41,9 @@ a:active{
     color: #FFC700;
 }
 
-#menuToggle {
-    display: block;
-    position: relative;
-    z-index: 1;
-    -webkit-user-select: none;
-    user-select: none;
-}
 
 #menuToggle input {
-    display: block;
+    display: none;
     width: 40px;
     height: 32px;
     cursor: pointer;
@@ -59,7 +52,7 @@ a:active{
     -webkit-touch-callout: none;
 }
 
-#menuToggle span {
+.hamburger_piece {
 	display: block;
 	width: 33px;
 	height: 4px;
@@ -74,26 +67,26 @@ a:active{
 	opacity 0.55s ease;
 }
 
-#menuToggle span:first-child {
+#first_span {
 	transform-origin: 0% 0%;
 }
 
-#menuToggle span:nth-last-child(2) {
+#second_span {
 	transform-origin: 0% 100%;
 }
 
-#menuToggle input:checked~span {
+#hamburger:checked + #hamburger_container > .hamburger_piece {
 	opacity: 1;
-	transform: rotate(45deg) translate(-2px, -1px);
+	transform: rotate(45deg) translate(-10px, -7px);
 	background: #232323;
 }
 
-#menuToggle input:checked~span:nth-last-child(3) {
+#hamburger:checked + #hamburger_container > #third_span {
 	opacity: 0;
 	transform: rotate(0deg) scale(0.2, 0.2);
 }
 
-#menuToggle input:checked~span:nth-last-child(2) {
+#hamburger:checked + #hamburger_container > #second_span {
 	opacity: 1;
 	transform: rotate(-45deg) translate(0, -1px);
 }
@@ -206,6 +199,9 @@ footer{
   
 
   @media (max-width: 700px) {
+    .img{
+      width: 15em;
+    }
     .column {
       flex: 100%;
       max-width: 100%;
